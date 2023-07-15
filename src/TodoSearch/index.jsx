@@ -1,12 +1,15 @@
 import React from 'react'
 
 import { FaSistrix } from "react-icons/fa6";
+import { TodoContext } from '../TodoContext';
 
-function TodoSearch( {
-  search, 
-  setSearch,
-} ) {
+function TodoSearch() {
 
+  
+  const {
+    search,
+    setSearch,
+  } = React.useContext(TodoContext)
 
   return (
     <>

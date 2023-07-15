@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 import { TodoCounter } from '../TodoCounter/index';
 import { TodoSearch } from '../TodoSearch/index';
@@ -8,37 +9,45 @@ import { CreateTodoButton } from '../CreateTodoButton/index';
 import { LoadItems } from '../LoadItems/index';
 import { ErrorItems } from '../ErrorItems/index';
 import { NotItems } from '../NotItems/index';
+import { TodoContext } from '../TodoContext';
 
-function AppUI( {countTodo,totalTodo,search,setSearch,searched,changeStateTodos,deleteTrueTodo,loading,error} ) {
+function AppUI() {
         
+  const {
+    loading,
+    error,
+    searched,
+    changeStateTodos,
+    deleteTodo
+} = React.useContext(TodoContext);
   return (
     <>
-      <TodoCounter 
-        count={countTodo} 
-        total={totalTodo}
-      />
 
-      <TodoSearch 
-        search={search}
-        setSearch={setSearch}
-      />
+      <TodoCounter />
+
+      <TodoSearch />
+      
       <TodoList>
-        {loading && <LoadItems/>}
-        {error && <ErrorItems/>}
-        {(!loading && searched === 0) && <NotItems/>}
+          {loading && <LoadItems/>}
+          {error && <ErrorItems/>}
+          {(!loading && searched === 0) && <NotItems/>}
 
-        {searched.map(Todo => (
+          {searched.map(Todo => (
           <TodoItem 
-            key={Todo.id}
-            id={Todo.id}
-            text={Todo.text}
-            state={Todo.state}
-            onComplete={() => changeStateTodos(Todo.id)}
-            onDelete={() => deleteTrueTodo(Todo.id)}
+              key={Todo.id}
+              id={Todo.id}
+              text={Todo.text}
+              state={Todo.state}
+              onComplete={() => changeStateTodos(Todo.id)}
+              onDelete={() => deleteTodo(Todo.id)}
           />
-        ))}
+          ))}
       </TodoList>
+      
       <CreateTodoButton />
+
+      
+
     </>
   );
 }
