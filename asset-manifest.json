@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/React_Tasck.git/static/css/main.7b06f578.css",
+    "main.js": "/React_Tasck.git/static/js/main.74094b3a.js",
+    "static/media/imgNotItem.jpg": "/React_Tasck.git/static/media/imgNotItem.d241c27aabbecbec086e.jpg",
+    "index.html": "/React_Tasck.git/index.html",
+    "main.7b06f578.css.map": "/React_Tasck.git/static/css/main.7b06f578.css.map",
+    "main.74094b3a.js.map": "/React_Tasck.git/static/js/main.74094b3a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b06f578.css",
+    "static/js/main.74094b3a.js"
+  ]
+}
